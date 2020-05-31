@@ -199,18 +199,19 @@ view model =
                 ]
 
           else
-            case
-                model.state
-                    |> Maybe.map BrainFuck.getRuntime
-                    |> Maybe.map memoryView
-            of
-                Just v ->
-                    v
+            text ""
+        , case
+            model.state
+                |> Maybe.map BrainFuck.getRuntime
+                |> Maybe.map memoryView
+          of
+            Just v ->
+                v
 
-                Nothing ->
-                    model.runtime
-                        |> Maybe.map memoryView
-                        |> Maybe.withDefault (text "")
+            Nothing ->
+                model.runtime
+                    |> Maybe.map memoryView
+                    |> Maybe.withDefault (text "")
         ]
 
 

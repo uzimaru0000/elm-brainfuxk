@@ -55,6 +55,7 @@ update msg model =
                 Ok cmds ->
                     ( { model
                         | runtime = Just <| BrainFuck.createRuntime cmds
+                        , state = Nothing
                         , isFinish = False
                       }
                     , Cmd.none
@@ -96,8 +97,11 @@ update msg model =
                     update Parse model
 
         RunAll ->
-            case model.state of
-                Just state ->
+            case ( model.runtime, model.state ) of
+                ( Just runtime, Nothing ) ->
+                    update RunAll { model | state = Just <| Run runtime }
+
+                ( _, Just state ) ->
                     case run state of
                         Ok (Finish rt) ->
                             ( { model
@@ -110,8 +114,8 @@ update msg model =
                         _ ->
                             ( model, Cmd.none )
 
-                Nothing ->
-                    ( model, Cmd.none )
+                ( Nothing, _ ) ->
+                    update Parse model
 
         InputCode str ->
             ( { model | code = str }, Cmd.none )
@@ -249,15 +253,6 @@ primitiveButton attrs =
                , class "disabled:cursor-not-allowed"
                ]
         )
-
-
-errorMsg : List Parser.DeadEnd -> Html msg
-errorMsg deadEnds =
-    if List.length deadEnds > 0 then
-        div [] [ text "ERROR!!" ]
-
-    else
-        text ""
 
 
 memoryView : Runtime -> Html msg

@@ -3,4 +3,3 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"QCba":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./Elm/Main.elm");e.Elm.Main.init({node:document.getElementById("main")});
 },{"./Elm/Main.elm":"KaMW"}]},{},["QCba"], null)
-//# sourceMappingURL=/src.8e6d7b3b.js.map

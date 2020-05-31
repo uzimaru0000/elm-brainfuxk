@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.ts"],"names":[],"mappings":";;;AAGA,aAAA,OAAA,eAAA,QAAA,aAAA,CAAA,OAAA,IAFA,IAAA,EAAA,QAAA,kBAEA,EAAA,IAAI,KAAK,KAAK,CAAE,KAAM,SAAS,eAAe","file":"src.8e6d7b3b.js","sourceRoot":"../src","sourcesContent":["// @ts-ignore\nimport { Elm } from './Elm/Main.elm';\n\nElm.Main.init({ node: document.getElementById('main') });\n"]}

@@ -15,9 +15,9 @@
     "autoprefixer": "^9.8.0",
     "elm-hot": "^1.1.4",
     "node-elm-compiler": "^5.0.4",
-    "parcel": "^1.12.4",
+    "parcel": "^2.8.2",
     "postcss-elm-tailwind": "^0.9.0",
-    "postcss-modules": "^2.0.0",
+    "postcss-modules": "^6.0.0",
     "sass": "^1.26.5",
     "tailwindcss": "^1.4.6",
     "typescript": "^3.9.3"
